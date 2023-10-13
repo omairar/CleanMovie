@@ -8,11 +8,16 @@ namespace CleanMovie.Domain
 {
     public class Movie
     {
-        public int Id { get; set; }
+        public int MovieId { get; set; }
 
         public string Name { get; set; } = String.Empty;
 
-        public decimal Cost { get; set; }
+        public decimal RentalCost { get; set; }
+        public int RentalDuration { get; set; }
+
+        ///Many to Many Realtionship
+
+        public IEnumerable<MovieRental> MovieRentals { get; set; }
 
     }
 }
